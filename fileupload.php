@@ -74,7 +74,7 @@ if(isset($_POST["submit"])) {
 				<div class="info"><span class="lbl">File Name: </span><span class="dataInfo"><?php echo $_FILES["fileToUpload"]["name"]; ?></span></div>
 				<div class="info"><span class="lbl">File Size: </span><span class="dataInfo"><?php echo $_FILES["fileToUpload"]["size"]; ?>B</span></div>
 				<div class="clear"></div>
-				<div id="infoError">
+				<div id="infoError" class="erNeg">
 					<div class="indicator"></div>
 					<div class="error_span"><?php echo $errorMsg; ?></div>
 					<div class="clear"></div>				
