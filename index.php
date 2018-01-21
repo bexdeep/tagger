@@ -235,15 +235,15 @@
 	<div class="flist_t">Data Files</div>
 	<?php
 		$dir = "uploads/";
-		$i = 1;
+		//$i = 1;
 		// Open a directory, and read its contents	
 		if (is_dir($dir)){
 		  if ($dh = opendir($dir)){
 		    while (($file = readdir($dh)) !== false){
 	?>
-			<?php if ($i>2) { ?>
+			
 			<div class="flist"><?php echo $file; ?></div>
-			<?php }$i++; ?>
+			
 
 	<?php
 		    }

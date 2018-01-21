@@ -6,41 +6,45 @@ $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $xlsFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 // Check if image file is a actual image or fake image
-if(isset($_POST["submit"])) {
-    if ($xlsFileType == "xlsx") {$check =1;} else {$check = 0;}
-    if($check == 1) {
-        $errorMsg = "<br>File is an excel file.";
-        $uploadOk = 1;
-    } else {
-        $errorMsg = "<br>File is not an excel.";
-        $uploadOk = 0;
-    }
-
-	// Check if file already exists
-    if ($_FILES["fileToUpload"]["name"] == "")
-    {
-	    $errorMsg = "No File choosen.";
-	    $uploadOk = 0;
-    }elseif (file_exists($target_file)) {
-	    $errorMsg = "File already exists.";
-	    $uploadOk = 0;
-	}
-	// Check file size
-	if ($_FILES["fileToUpload"]["size"] > 500000) {
-	    $errorMsg = "Your file is too large.";
-	    $uploadOk = 0;
-	}
-	if ($uploadOk == 0) {
-	    $errorMsg = "Sorry, your file was not uploaded."."<br>".$errorMsg;
-	// if everything is ok, try to upload file
-	} else {
-	    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-	        $errorMsg = "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+try {
+	if(isset($_POST["submit"])) {
+	    if ($xlsFileType == "xlsx") {$check =1;} else {$check = 0;}
+	    if($check == 1) {
+	        $errorMsg = "<br>File is an excel file.";
+	        $uploadOk = 1;
 	    } else {
-	        $errorMsg = "Sorry, there was an error uploading your file.";
+	        $errorMsg = "<br>File is not an excel.";
+	        $uploadOk = 0;
 	    }
-	}    	
 
+		// Check if file already exists
+	    if ($_FILES["fileToUpload"]["name"] == "")
+	    {
+		    $errorMsg = "No File choosen.";
+		    $uploadOk = 0;
+	    }elseif (file_exists($target_file)) {
+		    $errorMsg = "File already exists.";
+		    $uploadOk = 0;
+		}
+		// Check file size
+		if ($_FILES["fileToUpload"]["size"] > 500000) {
+		    $errorMsg = "Your file is too large.";
+		    $uploadOk = 0;
+		}
+		if ($uploadOk == 0) {
+		    $errorMsg = "Sorry, your file was not uploaded."."<br>".$errorMsg;
+		// if everything is ok, try to upload file
+		} else {
+		    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+		        $errorMsg = "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+		    } else {
+		        $errorMsg = "Sorry, there was an error uploading your file.";
+		    }
+		}    	
+
+	}
+}catch(Exception $e) {
+echo  "Error > {$e->getMessage()}";
 }
 ?>
 

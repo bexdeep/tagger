@@ -3027,7 +3027,7 @@ class Calculation
         return $formula;
     }
 
-    private static function mkMatrix(...$args)
+    private static function mkMatrix($args)
     {
         return $args;
     }
