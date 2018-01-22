@@ -238,9 +238,16 @@
 		if (is_dir($dir)){
 		  if ($dh = opendir($dir)){
 		    while (($file = readdir($dh)) !== false){
+		    	if ($file == "." || $file == ".." || $file == ".DS_Store"){
+		    		//Do Nothing
+		    	}else{
+
 	?>			
+			
 			<div class="flist"><?php echo $file; ?></div>			
+
 	<?php
+				}
 		    }
 		    closedir($dh);
 		  }
