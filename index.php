@@ -219,7 +219,7 @@
 	</div>	
 	<div class="clear"></div>
 	<div class="menubar">
-		File Name : <b><?php echo $inputFileName; ?></b> | Press: <b>'j'</b> Previous, <b>'k'</b> Next, <b>'r'</b> Refresh, <b>'f'</b> Load File
+		File Name : <a href="<?php echo $inputFileName; ?>"><b><?php echo $inputFileName; ?></b></a> | Press: <b>'j'</b> Previous, <b>'k'</b> Next, <b>'r'</b> Refresh, <b>'f'</b> Load File
 	</div>
 	<div class="footer">
 		<p>Property of bexdeep dataLab.</p>
@@ -235,16 +235,11 @@
 	<div class="flist_t">Data Files</div>
 	<?php
 		$dir = "uploads/";
-		//$i = 1;
-		// Open a directory, and read its contents	
 		if (is_dir($dir)){
 		  if ($dh = opendir($dir)){
 		    while (($file = readdir($dh)) !== false){
-	?>
-			
-			<div class="flist"><?php echo $file; ?></div>
-			
-
+	?>			
+			<div class="flist"><?php echo $file; ?></div>			
 	<?php
 		    }
 		    closedir($dh);
