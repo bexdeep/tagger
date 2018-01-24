@@ -12,7 +12,7 @@
 <script src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v2.5" async></script>  
 
 <div class="main largewidth">
-	<div class="header">
+	<div class="header" id="header">
 		<h1>Welcome to Tagger</h1> <p id="demo"></p>
 		<img src="img/excel.png">
 	</div>
@@ -62,21 +62,21 @@
 		  <input type="hidden" name="fileName" value="<?php echo $inputFileName; ?>"> <!-- Catpures total records-->
 
 		    <br><label>Brand</label>
-		    <input type="text" name="brand" value="<?php echo $worksheet->getCell($brand_col.$cell_id); ?>" list="">
+		    <input id ="brandtxt" type="text" name="brand" value="<?php echo $worksheet->getCell($brand_col.$cell_id); ?>" list="">
 		    <br><br><label>Celebrity</label>
-		    <input type="text" name="celeb" value="<?php echo $worksheet->getCell($celeb_col.$cell_id); ?>" list="">
+		    <input id ="celebtxt" type="text" name="celeb" value="<?php echo $worksheet->getCell($celeb_col.$cell_id); ?>" list="">
 		    <br><br><label>Tag 1</label>
-		    <input type="text" name="tag1" value="<?php echo $worksheet->getCell($tag1_col.$cell_id); ?>" list="">
+		    <input id ="tag1txt" type="text" name="tag1" value="<?php echo $worksheet->getCell($tag1_col.$cell_id); ?>" list="">
 		    <br><br><label>Tag 2</label>
-		    <input type="text" name="tag2" value="<?php echo $worksheet->getCell($tag2_col.$cell_id); ?>" list="">
+		    <input id ="tag2txt" type="text" name="tag2" value="<?php echo $worksheet->getCell($tag2_col.$cell_id); ?>" list="">
 		    <br><br><label>Collection</label>
-		    <input type="text" name="colln" value="<?php echo $worksheet->getCell($colln_col.$cell_id); ?>" list="">
+		    <input id ="collntxt" type="text" name="colln" value="<?php echo $worksheet->getCell($colln_col.$cell_id); ?>" list="">
 		    <br><br><label>Type 1</label>		    		    		    		    
-		    <input type="text" name="type1" value="<?php echo $worksheet->getCell($type1_col.$cell_id); ?>" list="type1">
+		    <input id ="typ1txt" type="text" name="type1" value="<?php echo $worksheet->getCell($type1_col.$cell_id); ?>" list="type1">
 		    <br><br><label>Type 2</label>
-		    <input type="text" name="type2" value="<?php echo $worksheet->getCell($type2_col.$cell_id); ?>" list="type2">
+		    <input id ="typ2txt" type="text" name="type2" value="<?php echo $worksheet->getCell($type2_col.$cell_id); ?>" list="type2">
 		    <br><br><label>Type 3</label>
-		    <input type="text" name="type3" value="<?php echo $worksheet->getCell($type3_col.$cell_id); ?>" list="">
+		    <input id ="typ3txt" type="text" name="type3" value="<?php echo $worksheet->getCell($type3_col.$cell_id); ?>" list="">
 			<datalist id="type1">
 				<option value="Accessories">Accessories</option>
 				<option value="Athleisure">Athleisure</option>

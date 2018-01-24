@@ -2,13 +2,43 @@ $(document).keypress(function(e){
     var x = e.keyCode || e.which;    
     //document.getElementById("demo").innerHTML = "The Unicode value is: " + x;
     //alert(x);
-    switch (x){
-    	case 106: $("#prev").click(); break; //j
-    	case 107: $("#next").click(); break; //k
-    	case 102: $("#fileList").toggle(); break; //f
-    	case 114: $("#refresh").click(); break; //r
-    	default: //do nothing
+    var flag = 0;
+
+    if ($("#brandtxt").is(':focus')) {
+        flag = 1;
+    }
+    if ($("#celebtxt").is(':focus')) {
+        flag = 1;
+    }
+    if ($("#tag1txt").is(':focus')) {
+        flag = 1;
+    }
+    if ($("#tag2txt").is(':focus')) {
+        flag = 1;
+    }
+    if ($("#collntxt").is(':focus')) {
+        flag = 1;
+    }
+    if ($("#typ1txt").is(':focus')) {
+        flag = 1;
+    }
+    if ($("#typ2txt").is(':focus')) {
+        flag = 1;
+    }
+    if ($("#typ3txt").is(':focus')) {
+        flag = 1;
     }    
+
+    if (flag == 0){
+        switch (x){
+            case 106: $("#prev").click(); break; //j
+            case 107: $("#next").click(); break; //k
+            case 102: $("#fileList").toggle(); break; //f
+            case 114: $("#refresh").click(); break; //r
+            default: //do nothing
+        }    
+    }
+
 });
 
 $(document).ready(function(){
